@@ -40,9 +40,6 @@ RUN apt-get install -y \
     wayland-protocols \
     xwayland
 
-# Use `docker build --build-arg NEW_ALL=$(date +%s)` to force rebuild from here.
-ARG NEW_ALL=date
-
 # Build wlroots.
 WORKDIR /root
 RUN git clone --depth 1 --branch 0.19.2 https://gitlab.freedesktop.org/wlroots/wlroots.git
@@ -58,7 +55,7 @@ RUN cp -a --parents \
 
 # Build scenefx.
 WORKDIR /root
-RUN git clone -b 0.4.1 https://github.com/wlrfx/scenefx.git
+RUN git clone --depth 1 -b 0.4.1 https://github.com/wlrfx/scenefx.git
 WORKDIR /root/scenefx
 RUN meson build
 RUN ninja -C build install
@@ -74,7 +71,7 @@ ARG NEW_MANGO=date
 
 # Build mangowc.
 WORKDIR /root
-RUN git clone https://github.com/israellevin/mangowc.git
+RUN git clone -b master https://github.com/israellevin/mangowc.git
 WORKDIR /root/mangowc
 RUN meson build
 RUN ninja -C build install
