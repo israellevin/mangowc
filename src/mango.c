@@ -843,7 +843,7 @@ static uint32_t swipe_fingers = 0;
 static double swipe_dx = 0;
 static double swipe_dy = 0;
 
-bool render_border = true;
+bool render_border = false;
 
 uint32_t chvt_backup_tag = 0;
 bool allow_frame_scheduling = true;
