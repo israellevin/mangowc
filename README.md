@@ -1,3 +1,9 @@
+# Customized Mango Wayland Compositor with Installer
+
+This is my own version, currently very lightly patched (just defaulted to no borders), with a convenient installer.
+
+Original README follows:
+
 # Mango Wayland Compositor
 <div>
   <img src="https://github.com/DreamMaoMao/mangowc/blob/main/assets/mango-transparency-256.png" alt="MangoWC Logo" width="120"/>
