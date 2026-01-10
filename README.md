@@ -1,6 +1,6 @@
 # Customized Mango Wayland Compositor with Installer
 
-This is my own version, currently very lightly patched (just defaulted to no borders), with a convenient installer.
+This is my own version, currently very lightly patched (default to no borders and cyclic tag search), with a convenient installer.
 
 Original README follows:
 

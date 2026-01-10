@@ -1360,15 +1360,21 @@ int32_t viewtoleft_have_client(const Arg *arg) {
 		return 0;
 	}
 
-	if (current <= 1)
-		return 0;
-
 	for (n = current - 1; n >= 1; n--) {
 		if (get_tag_status(n, selmon)) {
 			found = true;
 			break;
 		}
 	}
+
+    if (!found) {
+        for (n = LENGTH(tags); n >= 1; n--) {
+            if (get_tag_status(n, selmon)) {
+                found = true;
+                break;
+            }
+        }
+    }
 
 	if (found)
 		view(&(Arg){.ui = (1 << (n - 1)) & TAGMASK, .i = arg->i}, true);
@@ -1384,15 +1390,21 @@ int32_t viewtoright_have_client(const Arg *arg) {
 		return 0;
 	}
 
-	if (current >= LENGTH(tags))
-		return 0;
-
 	for (n = current + 1; n <= LENGTH(tags); n++) {
 		if (get_tag_status(n, selmon)) {
 			found = true;
 			break;
 		}
 	}
+
+    if (!found) {
+        for (n = 1; n <= LENGTH(tags); n++) {
+            if (get_tag_status(n, selmon)) {
+                found = true;
+                break;
+            }
+        }
+    }
 
 	if (found)
 		view(&(Arg){.ui = (1 << (n - 1)) & TAGMASK, .i = arg->i}, true);
