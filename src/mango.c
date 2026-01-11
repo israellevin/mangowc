@@ -1885,7 +1885,7 @@ buttonpress(struct wl_listener *listener, void *data) {
 	switch (event->state) {
 	case WL_POINTER_BUTTON_STATE_PRESSED:
 		cursor_mode = CurPressed;
-		selmon = xytomon(cursor->x, cursor->y);
+		//selmon = xytomon(cursor->x, cursor->y);
 		if (locked)
 			break;
 
@@ -1949,7 +1949,7 @@ buttonpress(struct wl_listener *listener, void *data) {
 			if (grabc == selmon->sel) {
 				selmon->sel = NULL;
 			}
-			selmon = xytomon(cursor->x, cursor->y);
+			//selmon = xytomon(cursor->x, cursor->y);
 			client_update_oldmonname_record(grabc, selmon);
 			setmon(grabc, selmon, 0, true);
 			reset_foreign_tolevel(grabc);

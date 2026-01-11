@@ -1,6 +1,11 @@
 # Customized Mango Wayland Compositor with Installer
 
-This is my own version, currently very lightly patched (default to no borders and cyclic tag search), with a convenient installer.
+This is my own version, currently very lightly patched, with a convenient installer.
+
+Changes:
+- Default to no border rendering
+- Cyclic "inhabited" tag traversal
+- Do not focus on click
 
 Original README follows:
 
